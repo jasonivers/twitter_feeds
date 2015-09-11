@@ -1,0 +1,28 @@
+<div class='mdl-card width-full'>
+  <h1>Tweets From <%= params[:handle] %></h1>
+  <ul class='tweets'>
+    <% @tweets.each do |tweet| %>
+      <li class='tweet'>
+        <div class='mdl-card mdl-shadow--2dp width-full'>
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text"><img src="<%= tweet.user.profile_image_url %>"><%= tweet.user.name %></h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <p><%= auto_link(tweet.text).html_safe %></p>
+            <p><%= local_time(tweet.created_at) %></p>
+            <% media = tweet.to_h[:entities][:media] %>
+            <% if not media.blank? %>
+              <% media.each do |medium| %>
+                <% if not medium[:media_url].blank? and not medium[:type].blank? %>
+                  <% if medium[:type] == 'photo' %>
+                    <img src="<%= medium[:media_url] %>">
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
