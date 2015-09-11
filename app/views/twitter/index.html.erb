@@ -1,0 +1,9 @@
+<div class='mdl-card width-full'>
+  <%= form_tag('/twitter') do %>
+    <div class="mdl-textfield mdl-js-textfield float-left mdl-cell mdl-cell--10-col mdl-cell--12-col-tablet">
+      <%= text_field_tag :handle, nil, class:"mdl-textfield__input width-full" %>
+      <label class="mdl-textfield__label" for="handle">Twitter Handle</label>
+    </div>
+    <div class='float-right mdl-cell mdl-cell--2-col mdl-cell--6-col-tablet'><button type="submit" class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>Get Tweets</button></div>
+  <% end %>
+</div>
