@@ -8,6 +8,6 @@ feature 'User signs in' do
     fill_in 'user_password', with: user.password
     click_on 'sign_in'
 
-    expect(page).to have_content('You have signed up successfully.')
+    expect(page).to have_content('Signed in successfully')
   end
 end

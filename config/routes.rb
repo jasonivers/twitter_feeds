@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
-  get '/twitter', to: 'twitter#index'
-  post '/twitter', to: 'twitter#post'
+  get '/twitter', to: 'twitter#index', as: :twitter_get
+  post '/twitter', to: 'twitter#post', as: :twitter_post
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
