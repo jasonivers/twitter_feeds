@@ -1,1 +1,20 @@
-Heroku environment set to development
+I dislike reinventing the wheel, and prefer to use gems when there are widely used ones available that offer the functionality I need.
+
+I like the Material Design Lite framework, so I implemented that.
+
+Main gems used:
+  Devise - Authentication
+  Twitter - Use the Twitter API
+  Rspec - Testing
+
+The local environment is set up to use MySQL, as I am more familiar with that, but Heroku uses Postgres, so that gem exists, as well.
+
+To set up the local environment, follow these steps:
+  Ensure RAILS_ENV is set to 'local'
+  Clone the repo
+  Install mysql server, as well as the client development libraries
+  Install bundler gem
+  Run bundle install in the app root directory
+  Run rake db:create && rake:db migrate
+  Run bundle exec puma -C config/puma.rb
+  Visit localhost:3000 in your browser
