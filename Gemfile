@@ -22,6 +22,11 @@ gem 'rails_layout', group: :development
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara', require: false
+  gem 'database_cleaner'
+  gem 'ffaker'
+  gem 'shoulda-matchers', require: false
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
